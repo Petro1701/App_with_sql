@@ -34,16 +34,17 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.pass_box = new System.Windows.Forms.TextBox();
-            this.login_box = new System.Windows.Forms.TextBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.textBox_password = new System.Windows.Forms.TextBox();
+            this.textBox_login = new System.Windows.Forms.TextBox();
+            this.pictureBox_3 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,9 +64,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(4, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(185, 31);
+            this.label1.Size = new System.Drawing.Size(189, 31);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Регистрация";
+            this.label1.Text = "Авторизация";
             // 
             // pictureBox2
             // 
@@ -80,7 +81,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(13, 13);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(80, 80);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -94,34 +95,37 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(197, 50);
             this.button1.TabIndex = 17;
-            this.button1.Text = "Создать аккаунт";
+            this.button1.Text = "Войти";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // pass_box
+            // textBox_password
             // 
-            this.pass_box.Location = new System.Drawing.Point(198, 238);
-            this.pass_box.Multiline = true;
-            this.pass_box.Name = "pass_box";
-            this.pass_box.Size = new System.Drawing.Size(197, 50);
-            this.pass_box.TabIndex = 16;
+            this.textBox_password.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox_password.Location = new System.Drawing.Point(198, 238);
+            this.textBox_password.Multiline = true;
+            this.textBox_password.Name = "textBox_password";
+            this.textBox_password.Size = new System.Drawing.Size(197, 50);
+            this.textBox_password.TabIndex = 16;
             // 
-            // login_box
+            // textBox_login
             // 
-            this.login_box.Location = new System.Drawing.Point(196, 173);
-            this.login_box.Multiline = true;
-            this.login_box.Name = "login_box";
-            this.login_box.Size = new System.Drawing.Size(197, 50);
-            this.login_box.TabIndex = 15;
+            this.textBox_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox_login.Location = new System.Drawing.Point(198, 173);
+            this.textBox_login.Multiline = true;
+            this.textBox_login.Name = "textBox_login";
+            this.textBox_login.Size = new System.Drawing.Size(197, 50);
+            this.textBox_login.TabIndex = 15;
             // 
-            // pictureBox4
+            // pictureBox_3
             // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(436, 238);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 14;
-            this.pictureBox4.TabStop = false;
+            this.pictureBox_3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_3.Image")));
+            this.pictureBox_3.Location = new System.Drawing.Point(436, 238);
+            this.pictureBox_3.Name = "pictureBox_3";
+            this.pictureBox_3.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_3.TabIndex = 14;
+            this.pictureBox_3.TabStop = false;
             // 
             // pictureBox3
             // 
@@ -153,27 +157,42 @@
             this.label2.TabIndex = 11;
             this.label2.Text = "Логин:";
             // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.BackColor = System.Drawing.SystemColors.Control;
+            this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.linkLabel1.LinkColor = System.Drawing.Color.Gray;
+            this.linkLabel1.Location = new System.Drawing.Point(227, 389);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(132, 16);
+            this.linkLabel1.TabIndex = 18;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Ещё нет аккаунта?";
+            // 
             // log_in
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(624, 451);
+            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.pass_box);
-            this.Controls.Add(this.login_box);
-            this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.textBox_password);
+            this.Controls.Add(this.textBox_login);
+            this.Controls.Add(this.pictureBox_3);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Name = "log_in";
             this.Text = "log_in";
+            this.Load += new System.EventHandler(this.log_in_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -187,11 +206,12 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox pass_box;
-        private System.Windows.Forms.TextBox login_box;
-        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.TextBox textBox_password;
+        private System.Windows.Forms.TextBox textBox_login;
+        private System.Windows.Forms.PictureBox pictureBox_3;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }
