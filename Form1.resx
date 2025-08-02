@@ -117,14 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="icons8-обновление-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\picture\icons8-обновление-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="pictureBox_clear.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DwAACw8BkvkDpQAAAchJREFUeF7tm11OAzEMhPcSILj/TUA80afywHEgljooipIl2Y3jiTefZLVK29Qz
+        nt2qf9tisWDjOdQt1Ofj+qV4CnUP9fOo71CvoS6BTPsrlAiXy/i6+yTEk5epv2TW3CZhL/buTaiJfXof
+        N4dDS+zdJSEnHrg3YU88cGtCjXjgzoQW8cCNCUfEg+lNOCMeTGtCD/FgOhN6igfTmKAhHtCboCke0Jow
+        QjygM2GkeEBjgoV4YG6CpXhgZgLTe/VSL/G6fNDaDSbxINeTigGM4kHaW/c+GY75/4h77NpnbmP1l5gD
+        qAxJPVqdSPtUi326xpAElcnvxZ7JBBXxNbFXiVwjKj3kHC1N3DIJKpPf25TJhOHiAYMJZuKBpQnm4oGF
+        CSriBflZimzaehYtnYE1zswae/5x1ACh1FjPhnvuleVsbDUPB7XYpzCaMEw8YDJhuHjAYIKZeGBpgrl4
+        YGECjXgw0gQ68eDsa3Dp8el67j40jEgCbqOZfIqGCekarXhQinMtU8W+RM8kYA/6yaecMWG62Jc4YoIb
+        8aDFBHfiQSysplyJB3IGl6+fc4LjuuSfoRZX4SNULvZs9R5KBdk494Rs9RZqsVhs2y+5BTClfMD2EgAA
+        AABJRU5ErkJggg==
+</value>
   </data>
-  <data name="icons8-лупа-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\picture\icons8-лупа-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8-блокнот-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\picture\icons8-блокнот-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
+  <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>40</value>
+  </metadata>
 </root>

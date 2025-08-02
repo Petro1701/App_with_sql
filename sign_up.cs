@@ -64,8 +64,9 @@ namespace ConsoleApp2
                 {
                     MessageBox.Show("Аккаунт успешно создан!", "Добавлен новый пользователь", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     log_in form_log_in = new log_in();
-                    form_log_in.ShowDialog();
                     this.Hide();
+                    form_log_in.ShowDialog();
+                    
                 }
                 else
                 {

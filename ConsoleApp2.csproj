@@ -88,6 +88,9 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="log_in.resx">
       <DependentUpon>log_in.cs</DependentUpon>
     </EmbeddedResource>
@@ -100,10 +103,12 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="picture\icons8-авторизация-48.png" />
     <Content Include="picture\icons8-авторизация-96.png" />
+    <Content Include="picture\icons8-блокнот-50.png" />
     <Content Include="picture\icons8-добавить-пользователя-40.png" />
     <Content Include="picture\icons8-ластик-64.png" />
+    <Content Include="picture\icons8-лупа-50.png" />
+    <Content Include="picture\icons8-обновление-50.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
