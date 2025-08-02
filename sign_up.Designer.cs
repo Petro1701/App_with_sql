@@ -32,19 +32,19 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox_clear = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.login_box = new System.Windows.Forms.TextBox();
-            this.pass_box = new System.Windows.Forms.TextBox();
+            this.pictureBox_eye_open = new System.Windows.Forms.PictureBox();
+            this.pictureBox_eye_closed = new System.Windows.Forms.PictureBox();
+            this.textBox_login = new System.Windows.Forms.TextBox();
+            this.textBox_password = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_clear)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_eye_open)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_eye_closed)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -61,7 +61,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.Silver;
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Controls.Add(this.pictureBox_clear);
             this.panel1.Location = new System.Drawing.Point(99, 13);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(517, 79);
@@ -77,15 +77,16 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Регистрация";
             // 
-            // pictureBox2
+            // pictureBox_clear
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(469, 20);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
+            this.pictureBox_clear.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_clear.Image")));
+            this.pictureBox_clear.Location = new System.Drawing.Point(469, 20);
+            this.pictureBox_clear.Name = "pictureBox_clear";
+            this.pictureBox_clear.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox_clear.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_clear.TabIndex = 0;
+            this.pictureBox_clear.TabStop = false;
+            this.pictureBox_clear.Click += new System.EventHandler(this.pictureBox_clear_Click);
             // 
             // label2
             // 
@@ -107,41 +108,45 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "Пароль:";
             // 
-            // pictureBox3
+            // pictureBox_eye_open
             // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(436, 238);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 4;
-            this.pictureBox3.TabStop = false;
+            this.pictureBox_eye_open.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_eye_open.Image")));
+            this.pictureBox_eye_open.Location = new System.Drawing.Point(436, 238);
+            this.pictureBox_eye_open.Name = "pictureBox_eye_open";
+            this.pictureBox_eye_open.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_eye_open.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_eye_open.TabIndex = 4;
+            this.pictureBox_eye_open.TabStop = false;
+            this.pictureBox_eye_open.Click += new System.EventHandler(this.pictureBox_eye_open_Click);
             // 
-            // pictureBox4
+            // pictureBox_eye_closed
             // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(436, 238);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 5;
-            this.pictureBox4.TabStop = false;
+            this.pictureBox_eye_closed.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_eye_closed.Image")));
+            this.pictureBox_eye_closed.Location = new System.Drawing.Point(436, 238);
+            this.pictureBox_eye_closed.Name = "pictureBox_eye_closed";
+            this.pictureBox_eye_closed.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_eye_closed.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_eye_closed.TabIndex = 5;
+            this.pictureBox_eye_closed.TabStop = false;
+            this.pictureBox_eye_closed.Click += new System.EventHandler(this.pictureBox_eye_closed_Click);
             // 
-            // login_box
+            // textBox_login
             // 
-            this.login_box.Location = new System.Drawing.Point(198, 173);
-            this.login_box.Multiline = true;
-            this.login_box.Name = "login_box";
-            this.login_box.Size = new System.Drawing.Size(197, 50);
-            this.login_box.TabIndex = 6;
+            this.textBox_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox_login.Location = new System.Drawing.Point(198, 173);
+            this.textBox_login.Multiline = true;
+            this.textBox_login.Name = "textBox_login";
+            this.textBox_login.Size = new System.Drawing.Size(197, 50);
+            this.textBox_login.TabIndex = 6;
             // 
-            // pass_box
+            // textBox_password
             // 
-            this.pass_box.Location = new System.Drawing.Point(198, 238);
-            this.pass_box.Multiline = true;
-            this.pass_box.Name = "pass_box";
-            this.pass_box.Size = new System.Drawing.Size(197, 50);
-            this.pass_box.TabIndex = 7;
+            this.textBox_password.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox_password.Location = new System.Drawing.Point(198, 238);
+            this.textBox_password.Multiline = true;
+            this.textBox_password.Name = "textBox_password";
+            this.textBox_password.Size = new System.Drawing.Size(197, 50);
+            this.textBox_password.TabIndex = 7;
             // 
             // button1
             // 
@@ -152,6 +157,7 @@
             this.button1.TabIndex = 8;
             this.button1.Text = "Создать аккаунт";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // sign_up
             // 
@@ -159,22 +165,23 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(624, 451);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.pass_box);
-            this.Controls.Add(this.login_box);
-            this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.textBox_password);
+            this.Controls.Add(this.textBox_login);
+            this.Controls.Add(this.pictureBox_eye_closed);
+            this.Controls.Add(this.pictureBox_eye_open);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.Name = "sign_up";
             this.Text = "sign_up";
+            this.Load += new System.EventHandler(this.sign_up_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_clear)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_eye_open)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_eye_closed)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -184,14 +191,14 @@
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox_clear;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.TextBox login_box;
-        private System.Windows.Forms.TextBox pass_box;
+        private System.Windows.Forms.PictureBox pictureBox_eye_open;
+        private System.Windows.Forms.PictureBox pictureBox_eye_closed;
+        private System.Windows.Forms.TextBox textBox_login;
+        private System.Windows.Forms.TextBox textBox_password;
         private System.Windows.Forms.Button button1;
     }
 }

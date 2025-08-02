@@ -77,6 +77,7 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // pictureBox1
             // 
@@ -126,6 +127,7 @@
             this.pictureBox_3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox_3.TabIndex = 14;
             this.pictureBox_3.TabStop = false;
+            this.pictureBox_3.Click += new System.EventHandler(this.pictureBox_3_Click);
             // 
             // pictureBox3
             // 
@@ -136,6 +138,7 @@
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 13;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // label3
             // 
@@ -169,6 +172,7 @@
             this.linkLabel1.TabIndex = 18;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Ещё нет аккаунта?";
+            this.linkLabel1.Click += new System.EventHandler(this.linkLabel1_Click);
             // 
             // log_in
             // 

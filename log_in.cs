@@ -18,11 +18,12 @@ namespace ConsoleApp2
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
+           
         }
         private void log_in_Load(object sender, EventArgs e)
         {
             textBox_password.PasswordChar = '*';
-            pictureBox_3.Visible = false;
+            pictureBox3.Visible = false;
             textBox_login.MaxLength = 50;
             textBox_password.MaxLength = 50;
         }
@@ -34,8 +35,8 @@ namespace ConsoleApp2
 
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             DataTable table = new DataTable();
-            string query_string = $"select * from register where login_user='{loginUser}' and password_user='{passUser}'";
 
+            string query_string = $"select * from register where login_user='{loginUser}' and password_user='{passUser}'";
             MySqlCommand command = new MySqlCommand(query_string,database.GetConnection());
 
             adapter.SelectCommand = command;
@@ -56,6 +57,34 @@ namespace ConsoleApp2
 
         }
 
-       
+        private void linkLabel1_Click(object sender, EventArgs e)
+        {
+            sign_up form_sign_up = new sign_up();
+            form_sign_up.Show();
+            this.Hide();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            textBox_login.Text = "";
+            textBox_password.Text = "";
+        }
+
+        private void pictureBox_3_Click(object sender, EventArgs e)
+        {
+            
+            textBox_password.UseSystemPasswordChar = true;
+            pictureBox_3.Visible = false;
+            pictureBox3.Visible = true;
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            textBox_password.UseSystemPasswordChar = false;
+            pictureBox3.Visible = false;
+            pictureBox_3.Visible = true;
+           
+
+        }
     }
 }
