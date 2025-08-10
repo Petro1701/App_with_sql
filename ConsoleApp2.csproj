@@ -36,6 +36,10 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data, Version=9.3.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Program Files (x86)\MySQL\MySQL Connector NET 9.3\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -52,6 +56,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Add_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add_Form.Designer.cs">
+      <DependentUpon>Add_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataBase.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -88,6 +98,9 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Add_Form.resx">
+      <DependentUpon>Add_Form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -105,7 +118,9 @@
   <ItemGroup>
     <Content Include="picture\icons8-авторизация-96.png" />
     <Content Include="picture\icons8-блокнот-50.png" />
+    <Content Include="picture\icons8-добавить-пользователя-100.png" />
     <Content Include="picture\icons8-добавить-пользователя-40.png" />
+    <Content Include="picture\icons8-информация-50.png" />
     <Content Include="picture\icons8-ластик-64.png" />
     <Content Include="picture\icons8-лупа-50.png" />
     <Content Include="picture\icons8-обновление-50.png" />

@@ -131,6 +131,7 @@
             this.button_save.TabIndex = 3;
             this.button_save.Text = "Сохранить";
             this.button_save.UseVisualStyleBackColor = true;
+            this.button_save.Click += new System.EventHandler(this.button_save_Click);
             // 
             // button_update
             // 
@@ -151,6 +152,7 @@
             this.button_delete.TabIndex = 1;
             this.button_delete.Text = "Удалить";
             this.button_delete.UseVisualStyleBackColor = true;
+            this.button_delete.Click += new System.EventHandler(this.button_delete_Click);
             // 
             // button_new_record
             // 
@@ -161,6 +163,7 @@
             this.button_new_record.TabIndex = 0;
             this.button_new_record.Text = "Новая запись";
             this.button_new_record.UseVisualStyleBackColor = true;
+            this.button_new_record.Click += new System.EventHandler(this.button_new_record_Click);
             // 
             // panel_under_record
             // 
@@ -293,6 +296,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(772, 359);
             this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // panel_search
             // 
@@ -313,6 +317,7 @@
             this.textBox_search.Name = "textBox_search";
             this.textBox_search.Size = new System.Drawing.Size(150, 20);
             this.textBox_search.TabIndex = 4;
+            this.textBox_search.TextChanged += new System.EventHandler(this.textBox_search_TextChanged);
             // 
             // pictureBox_search
             // 
@@ -333,6 +338,7 @@
             this.pictureBox_update.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox_update.TabIndex = 2;
             this.pictureBox_update.TabStop = false;
+            this.pictureBox_update.Click += new System.EventHandler(this.pictureBox_update_Click);
             // 
             // pictureBox_clear
             // 
@@ -397,6 +403,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();

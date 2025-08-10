@@ -103,19 +103,17 @@
             // textBox_password
             // 
             this.textBox_password.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_password.Location = new System.Drawing.Point(198, 238);
-            this.textBox_password.Multiline = true;
+            this.textBox_password.Location = new System.Drawing.Point(198, 248);
             this.textBox_password.Name = "textBox_password";
-            this.textBox_password.Size = new System.Drawing.Size(197, 50);
+            this.textBox_password.Size = new System.Drawing.Size(197, 31);
             this.textBox_password.TabIndex = 16;
             // 
             // textBox_login
             // 
             this.textBox_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox_login.Location = new System.Drawing.Point(198, 173);
-            this.textBox_login.Multiline = true;
             this.textBox_login.Name = "textBox_login";
-            this.textBox_login.Size = new System.Drawing.Size(197, 50);
+            this.textBox_login.Size = new System.Drawing.Size(197, 31);
             this.textBox_login.TabIndex = 15;
             // 
             // pictureBox_3

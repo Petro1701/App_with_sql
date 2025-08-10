@@ -100,5 +100,25 @@ namespace ConsoleApp2
                 return true;
             }
         }
+
+        private void textBox_login_TextChanged(object sender, EventArgs e)
+        {
+            float currentSize;
+            currentSize = textBox_login.Font.Size;
+            if (textBox_login.Text.Length >= 10)
+            {
+                currentSize -= 2;
+                if (currentSize < 10)
+                    currentSize += 2;
+            }else if (textBox_login.Text.Length < 10)
+            {
+                currentSize += 2;
+                if (currentSize >= 11)
+                    currentSize -= 2;
+            }
+             
+
+            textBox_login.Font = new Font(textBox_login.Name, currentSize, textBox_login.Font.Style, textBox_login.Font.Unit);
+        }
     }
 }
