@@ -98,7 +98,8 @@ namespace ConsoleApp2
 
         private void pictureBox_update_Click(object sender, EventArgs e) //Метод, обновляющий строки таблицы dataGridView1 при клике на картинку
         {
-            RefreshDataGrid(dataGridView1); //Метод, обновляющий строки таблицы dataGridView1
+            RefreshDataGrid(dataGridView1);//Метод, обновляющий строки таблицы dataGridView1
+            ClearFieldTextBox();
         }
 
         private void button_new_record_Click(object sender, EventArgs e)
@@ -141,6 +142,7 @@ namespace ConsoleApp2
             }
             */
             dataGridView1.Rows[index].Cells[5].Value = RowState.Deleted;
+            ClearFieldTextBox();
         }
 
         private void button_delete_Click(object sender, EventArgs e)
@@ -151,26 +153,77 @@ namespace ConsoleApp2
         private void Update_RowState()
         {
             dataBase.openConnection();
-            for(int index=0; index < dataGridView1.Rows.Count; index++)
+            RowState rowState; //Выносим переменную за цикл, чтоб каждый раз её не инициировать.
+            int id_row; //переменная будет в себе хранить значение ячейки[0]. Т.е. идентификатор(уникальный primary key, по которому удалится точно та запись, которую мы имели ввиду)
+            for (int index=0; index < dataGridView1.Rows.Count; index++)
             {
-                var rowState = (RowState)dataGridView1.Rows[index].Cells[5].Value;
+                rowState = (RowState)dataGridView1.Rows[index].Cells[5].Value; //Rowstate rowState = (RowState)dataGridView1.Rows[index].Cells[5].Value; можно и так
                 if (rowState == RowState.Existed)
                     continue;
                 if(rowState==RowState.Deleted)
                 {
-                    int id = Convert.ToInt32(dataGridView1.Rows[index].Cells[0].Value);
-                    string deleteQuery = $"delete from test_db where id={id}";
+                     id_row = Convert.ToInt32(dataGridView1.Rows[index].Cells[0].Value);
+                    string deleteQuery = $"delete from test_db where id={id_row}";
                     MySqlCommand command = new MySqlCommand(deleteQuery, dataBase.GetConnection());
                     command.ExecuteNonQuery();
                     MessageBox.Show("Запись удалена!", "Успешно!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+                else if (rowState == RowState.Modified) //блок при нахождении в последней ячейки статуса RowState.Modified, который присваивается при изменении текста в textBox
+                {
+                    int id=int.Parse(dataGridView1.Rows[index].Cells[0].Value.ToString());
+                    string type_of = dataGridView1.Rows[index].Cells[1].Value.ToString();
+                    int count = int.Parse(dataGridView1.Rows[index].Cells[2].Value.ToString());
+                    string postavka = dataGridView1.Rows[index].Cells[3].Value.ToString();
+                    float price = float.Parse(dataGridView1.Rows[index].Cells[4].Value.ToString()); //цена не всегда будет целым числом, для этого переменную в с# делаем float, а в БД меняем на decimal
+                    string changeQuery = $"update test_db set type_of=@type_of,count_of=@count,postavka=@postavka,price=@price where id=@id;";
+                    MySqlCommand command = new MySqlCommand(changeQuery, dataBase.GetConnection());
+                    command.Parameters.AddWithValue("@type_of", type_of);
+                    command.Parameters.AddWithValue("@count", count);
+                    command.Parameters.AddWithValue("@postavka", postavka);
+                    command.Parameters.AddWithValue("@price", price);
+                    command.Parameters.AddWithValue("@id", id);
+                    command.ExecuteNonQuery();
+                }
             }
             dataBase.closeConnection();
+            MessageBox.Show("Изменения успешно внесены в базу данных!");
         }
 
         private void button_save_Click(object sender, EventArgs e)
         {
             Update_RowState();
+        }
+
+        private void Changed() //Изменение данных будет проходить в textBoxас в нижней панели
+        {
+            var selectedRowIndex = dataGridView1.CurrentCell.RowIndex; //Заносим в переменную индекс строки, на чьей ячейке мы отановились на данный момент
+            int id = int.Parse(textBox_id.Text);                    //заносим данные с textbox,которые заполняются при нажатии на  в переменные
+            string type_of = textBox_type_of.Text;
+            int count = int.Parse(textBox_count.Text);
+            string postavka = textBox_postavka.Text;
+            int price = int.Parse(textBox_price.Text);
+            dataGridView1.Rows[selectedRow].SetValues(id, type_of, count, postavka, price);//Теперь нам надо присвоить значения из textboxов в значения строки, т.е. update row
+            dataGridView1.Rows[selectedRow].Cells[5].Value = RowState.Modified; //Так как мы изменили строку, присвоим последней колонке IsNew(отвечающей за статус колонки) Modified
+                                                                                //Теперь добавим в метод Update_rowstate, подвязанный на кнопку "Сохранить"  блок при изменении данных, чтоб запрос менял значения в БД
+
+        }
+        private void ClearFieldTextBox()
+        {
+            textBox_id.Text = "";
+            textBox_type_of.Text = "";
+            textBox_count.Text = "";
+            textBox_postavka.Text = "";
+            textBox_price.Text = "";
+        }
+        private void button_update_Click(object sender, EventArgs e)
+        {
+            Changed();
+            ClearFieldTextBox();
+        }
+
+        private void pictureBox_clear_Click(object sender, EventArgs e)
+        {
+            ClearFieldTextBox();
         }
     }
 }

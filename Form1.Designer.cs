@@ -142,6 +142,7 @@
             this.button_update.TabIndex = 2;
             this.button_update.Text = "Изменить";
             this.button_update.UseVisualStyleBackColor = true;
+            this.button_update.Click += new System.EventHandler(this.button_update_Click);
             // 
             // button_delete
             // 
@@ -349,6 +350,7 @@
             this.pictureBox_clear.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox_clear.TabIndex = 1;
             this.pictureBox_clear.TabStop = false;
+            this.pictureBox_clear.Click += new System.EventHandler(this.pictureBox_clear_Click);
             // 
             // label1
             // 
