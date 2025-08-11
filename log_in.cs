@@ -22,7 +22,8 @@ namespace ConsoleApp2
         }
         private void log_in_Load(object sender, EventArgs e)
         {
-            textBox_password.PasswordChar = '*';
+            textBox_password.UseSystemPasswordChar = true;
+            //textBox_password.PasswordChar = '*';
             pictureBox3.Visible = false;
             textBox_login.MaxLength = 50;
             textBox_password.MaxLength = 50;
@@ -73,18 +74,23 @@ namespace ConsoleApp2
         private void pictureBox_3_Click(object sender, EventArgs e)
         {
             
-            textBox_password.UseSystemPasswordChar = true;
+            textBox_password.UseSystemPasswordChar = false;
             pictureBox_3.Visible = false;
             pictureBox3.Visible = true;
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            textBox_password.UseSystemPasswordChar = false;
+            textBox_password.UseSystemPasswordChar = true;
             pictureBox3.Visible = false;
             pictureBox_3.Visible = true;
            
 
+        }
+
+        private void log_in_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

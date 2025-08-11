@@ -23,7 +23,7 @@ namespace ConsoleApp2
         private void sign_up_Load(object sender, EventArgs e)
         {
             pictureBox_eye_open.Visible = false;
-            textBox_password.PasswordChar = '*';
+            textBox_password.UseSystemPasswordChar = true;
             textBox_login.MaxLength = 50;
             textBox_password.MaxLength = 50;
         }
@@ -36,7 +36,7 @@ namespace ConsoleApp2
 
         private void pictureBox_eye_open_Click(object sender, EventArgs e)
         {
-            textBox_password.UseSystemPasswordChar = false;
+            textBox_password.UseSystemPasswordChar = true;
             pictureBox_eye_open.Visible = false;
             pictureBox_eye_closed.Visible = true;
 
@@ -44,7 +44,7 @@ namespace ConsoleApp2
 
         private void pictureBox_eye_closed_Click(object sender, EventArgs e)
         {
-            textBox_password.UseSystemPasswordChar = true;
+            textBox_password.UseSystemPasswordChar = false;
             pictureBox_eye_closed.Visible = false;
             pictureBox_eye_open.Visible = true;
         }
@@ -64,8 +64,9 @@ namespace ConsoleApp2
                 {
                     MessageBox.Show("Аккаунт успешно создан!", "Добавлен новый пользователь", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     log_in form_log_in = new log_in();
-                    this.Hide();
                     form_log_in.ShowDialog();
+                    this.Close();
+                    
                     
                 }
                 else
@@ -74,7 +75,9 @@ namespace ConsoleApp2
                 }
                 database.closeConnection();
             }
-        
+            log_in login_In= new log_in();
+            login_In.Show();
+            this.Close();
 
            
         }
@@ -119,6 +122,43 @@ namespace ConsoleApp2
              
 
             textBox_login.Font = new Font(textBox_login.Name, currentSize, textBox_login.Font.Style, textBox_login.Font.Unit);
+        }
+
+        private void Label_back_to_sign_up_MouseMove(object sender, MouseEventArgs e)
+        {
+            Label_back_to_sign_up.ForeColor = Color.Green;
+        }
+
+        private void Label_back_to_sign_up_MouseLeave(object sender, EventArgs e)
+        {
+            Label_back_to_sign_up.ForeColor = Color.Gray;
+        }
+        
+        private void sign_up_MouseMove(object sender, MouseEventArgs e) //метод передвигает форму в последнюю указаную точку
+        {
+            if (e.Button == MouseButtons.Left) //метод будет передвигать при условии если нажата ЛКМ
+            {
+                this.Left += e.X - lastpoint.X; //this.left говорит, на каком расстоянии от левой границы экрана будет форма
+                this.Top += e.Y - lastpoint.Y; //this.Top говорит, на каком расстоянии от верхней границы экрана будет форма
+            }
+        }
+        Point lastpoint; //переменная будет в себе хранить координаты мыши, когда она будет на нашем компоненте
+        private void sign_up_MouseDown(object sender, MouseEventArgs e) //Когда мышь над нашим компонентом, передаётся координаты указателя мыши в переменную lastpoint
+        {
+            lastpoint = new Point(e.X,e.Y);
+        }
+
+        private void Label_back_to_sign_up_Click(object sender, EventArgs e)
+        {
+            log_in log_In = new log_in();
+            log_In.Show();
+            this.Close();
+
+        }
+
+        private void sign_up_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

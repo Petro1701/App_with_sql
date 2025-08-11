@@ -40,6 +40,7 @@
             this.textBox_login = new System.Windows.Forms.TextBox();
             this.textBox_password = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.Label_back_to_sign_up = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_clear)).BeginInit();
@@ -158,11 +159,27 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // Label_back_to_sign_up
+            // 
+            this.Label_back_to_sign_up.AutoSize = true;
+            this.Label_back_to_sign_up.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Label_back_to_sign_up.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Label_back_to_sign_up.ForeColor = System.Drawing.Color.Gray;
+            this.Label_back_to_sign_up.Location = new System.Drawing.Point(12, 417);
+            this.Label_back_to_sign_up.Name = "Label_back_to_sign_up";
+            this.Label_back_to_sign_up.Size = new System.Drawing.Size(49, 16);
+            this.Label_back_to_sign_up.TabIndex = 9;
+            this.Label_back_to_sign_up.Text = "Назад";
+            this.Label_back_to_sign_up.Click += new System.EventHandler(this.Label_back_to_sign_up_Click);
+            this.Label_back_to_sign_up.MouseLeave += new System.EventHandler(this.Label_back_to_sign_up_MouseLeave);
+            this.Label_back_to_sign_up.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Label_back_to_sign_up_MouseMove);
+            // 
             // sign_up
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(624, 451);
+            this.Controls.Add(this.Label_back_to_sign_up);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox_password);
             this.Controls.Add(this.textBox_login);
@@ -174,7 +191,10 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "sign_up";
             this.Text = "sign_up";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.sign_up_FormClosed);
             this.Load += new System.EventHandler(this.sign_up_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.sign_up_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.sign_up_MouseMove);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -199,5 +219,6 @@
         private System.Windows.Forms.TextBox textBox_login;
         private System.Windows.Forms.TextBox textBox_password;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label Label_back_to_sign_up;
     }
 }
